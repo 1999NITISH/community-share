@@ -36,8 +36,8 @@ const Profile: React.FC = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [profile, setProfile] = useState<UserProfile>({
     userId: "usr123",
-    name: "Alice Johnson",
-    email: "alice.johnson@email.com",
+    name: "Nitish Kumar",
+    email: "nitishkr@email.com",
     location: "Block A, Sector 45",
     bio: "Friendly neighbor who loves sharing tools and helping the community. I believe in sustainable living and building strong neighborhood connections.",
     joinDate: "2024-01-01",
@@ -45,7 +45,7 @@ const Profile: React.FC = () => {
     lendingCount: 7,
     borrowingCount: 2,
     positiveFeedback: 97,
-    avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face"
+    avatar: "https://media.licdn.com/dms/image/v2/D5603AQGGRXOKyG3PCQ/profile-displayphoto-crop_800_800/B56Zfpq5XeHEAI-/0/1751972026725?e=1756339200&v=beta&t=e6XfeIvkM_l9bMnW-v8Uiz3U3HufN8R4hWj6crqSZuM"
   });
 
   const [editForm, setEditForm] = useState(profile);

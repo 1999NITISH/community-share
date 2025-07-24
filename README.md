@@ -11,7 +11,6 @@ A React.js-based web application that enables residents of a neighborhood to **l
 - **Styling:** Tailwind CSS / CSS Modules (your choice)
 - **Icons & UI:** React Icons, custom components
 - **Persistence:** `localStorage` for mock DB and request state
-- **Deployment:** Vercel / Netlify
 
 ---
 

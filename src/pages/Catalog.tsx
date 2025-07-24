@@ -29,7 +29,8 @@ const Catalog: React.FC = () => {
           <div className="relative z-10 space-y-6">
             <div className="flex items-center justify-center space-x-2 mb-6">
               <div className="p-4 bg-primary/10 rounded-full border border-primary/20">
-                <Sparkles className="h-8 w-8 text-primary" />
+                {/* <Sparkles className="h-8 w-8 text-primary" /> */}
+                <img src="./image.png" alt="image.png" width="250" height="300" />
               </div>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-foreground leading-tight">

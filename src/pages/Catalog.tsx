@@ -24,32 +24,56 @@ const Catalog: React.FC = () => {
     <Layout>
       <div className="space-y-8">
         {/* Hero Section */}
-        <div className="text-center space-y-4">
-          <div className="flex items-center justify-center space-x-2 mb-4">
-            <div className="p-3 bg-gradient-community rounded-full">
-              <Sparkles className="h-8 w-8 text-white" />
+        <div className="relative overflow-hidden bg-gradient-community rounded-2xl p-8 md:p-12 text-center">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent"></div>
+          <div className="relative z-10 space-y-6">
+            <div className="flex items-center justify-center space-x-2 mb-6">
+              <div className="text-6xl">🏠</div>
+              <div className="text-6xl">🤝</div>
+              <div className="text-6xl">🌱</div>
             </div>
-          </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground">
-            Discover & Share
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Connect with your neighbors to borrow and lend household items. 
-            Build community while promoting sustainability.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-6">
-            <Button asChild variant="community" size="lg">
-              <Link to="/add-item" className="flex items-center space-x-2">
-                <Plus className="h-5 w-5" />
-                <span>Share an Item</span>
-              </Link>
-            </Button>
-            <Button asChild variant="outline" size="lg">
-              <Link to="/map" className="flex items-center space-x-2">
-                <Package className="h-5 w-5" />
-                <span>View Map</span>
-              </Link>
-            </Button>
+            <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
+              Share, Borrow, Connect 🌟
+            </h1>
+            <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
+              Transform your neighborhood into a thriving community! 
+              Discover amazing items 📦, meet wonderful neighbors 👥, 
+              and build a sustainable future together 🌍
+            </p>
+            
+            {/* Feature highlights */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 mb-8">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                <div className="text-3xl mb-2">🔧</div>
+                <h3 className="font-semibold text-white mb-1">Tools & Equipment</h3>
+                <p className="text-white/80 text-sm">Drills, ladders, and more</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                <div className="text-3xl mb-2">🏕️</div>
+                <h3 className="font-semibold text-white mb-1">Outdoor Gear</h3>
+                <p className="text-white/80 text-sm">Camping, sports, adventure</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                <div className="text-3xl mb-2">🍳</div>
+                <h3 className="font-semibold text-white mb-1">Kitchen Items</h3>
+                <p className="text-white/80 text-sm">Appliances, cookware, gadgets</p>
+              </div>
+            </div>
+            
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button asChild variant="secondary" size="lg" className="bg-white text-primary hover:bg-white/90">
+                <Link to="/add-item" className="flex items-center space-x-2">
+                  <Plus className="h-5 w-5" />
+                  <span>Share an Item 📤</span>
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
+                <Link to="/map" className="flex items-center space-x-2">
+                  <Package className="h-5 w-5" />
+                  <span>Explore Map 🗺️</span>
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
 
@@ -94,28 +118,34 @@ const Catalog: React.FC = () => {
         </div>
 
         {/* Community Stats */}
-        <div className="bg-gradient-card rounded-lg border border-border p-8 text-center">
-          <h3 className="text-2xl font-semibold text-foreground mb-4">
-            Building Stronger Communities
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div>
-              <div className="text-3xl font-bold text-primary mb-2">
+        <div className="bg-gradient-card rounded-xl border border-border p-8 text-center">
+          <div className="flex items-center justify-center mb-6">
+            <div className="text-4xl mr-3">📊</div>
+            <h3 className="text-2xl font-semibold text-foreground">
+              Building Stronger Communities
+            </h3>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="space-y-2">
+              <div className="text-4xl">📦</div>
+              <div className="text-3xl font-bold text-primary">
                 {filteredItems.length}
               </div>
-              <div className="text-muted-foreground">Items Shared</div>
+              <div className="text-muted-foreground font-medium">Items Shared</div>
             </div>
-            <div>
-              <div className="text-3xl font-bold text-primary mb-2">
+            <div className="space-y-2">
+              <div className="text-4xl">👥</div>
+              <div className="text-3xl font-bold text-primary">
                 {new Set(filteredItems.map(item => item.owner)).size}
               </div>
-              <div className="text-muted-foreground">Active Neighbors</div>
+              <div className="text-muted-foreground font-medium">Active Neighbors</div>
             </div>
-            <div>
-              <div className="text-3xl font-bold text-primary mb-2">
+            <div className="space-y-2">
+              <div className="text-4xl">🤝</div>
+              <div className="text-3xl font-bold text-primary">
                 {filteredItems.filter(item => !item.available).length}
               </div>
-              <div className="text-muted-foreground">Items Borrowed</div>
+              <div className="text-muted-foreground font-medium">Items Borrowed</div>
             </div>
           </div>
         </div>

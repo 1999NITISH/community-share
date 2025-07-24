@@ -2,41 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Neighborhood Sharing App Design System - Promoting Community & Sustainability */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Community-focused color palette */
+    --background: 35 20% 98%;
+    --foreground: 25 15% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 25 15% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 25 15% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Warm green primary for sustainability */
+    --primary: 142 70% 45%;
+    --primary-foreground: 0 0% 100%;
+    --primary-soft: 142 45% 95%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Earth tone secondary */
+    --secondary: 35 25% 90%;
+    --secondary-foreground: 25 15% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 35 15% 94%;
+    --muted-foreground: 25 8% 55%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Trust-building blue accent */
+    --accent: 210 75% 60%;
+    --accent-foreground: 0 0% 100%;
+    --accent-soft: 210 45% 95%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Warm orange for call-to-action */
+    --cta: 25 85% 60%;
+    --cta-foreground: 0 0% 100%;
+    --cta-soft: 25 85% 95%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --destructive: 0 75% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --radius: 0.5rem;
+    --border: 35 15% 88%;
+    --input: 35 15% 92%;
+    --ring: 142 70% 45%;
+
+    --radius: 0.75rem;
+
+    /* Gradients for visual appeal */
+    --gradient-community: linear-gradient(135deg, hsl(142 70% 45%), hsl(120 65% 50%));
+    --gradient-soft: linear-gradient(135deg, hsl(35 25% 98%), hsl(142 15% 97%));
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(35 10% 99%));
+
+    /* Shadows for depth */
+    --shadow-card: 0 4px 20px -4px hsl(25 15% 15% / 0.1);
+    --shadow-floating: 0 10px 40px -10px hsl(25 15% 15% / 0.15);
+
+    /* Smooth transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     --sidebar-background: 0 0% 98%;
 

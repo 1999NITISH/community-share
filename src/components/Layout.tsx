@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Home, Plus, Search, User, MapPin } from 'lucide-react';
+import { Home, Plus, Search, User, MapPin, Moon, Sun } from 'lucide-react';
 import { Button } from './ui/button';
 import { cn } from '@/lib/utils';
+import { useTheme } from 'next-themes';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -10,6 +11,7 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const location = useLocation();
+  const { theme, setTheme } = useTheme();
 
   const isActivePath = (path: string) => {
     if (path === '/' && location.pathname === '/') return true;
@@ -87,6 +89,20 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                   <User className="h-4 w-4" />
                   <span>Profile</span>
                 </Link>
+              </Button>
+
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                className="flex items-center space-x-2"
+              >
+                {theme === 'dark' ? (
+                  <Sun className="h-4 w-4" />
+                ) : (
+                  <Moon className="h-4 w-4" />
+                )}
+                <span className="sr-only">Toggle theme</span>
               </Button>
             </nav>
 

@@ -42,7 +42,8 @@ cd community-share
 
 npm install
 
-npm run dev ```
+npm run dev
+```
 
 - Navigate to [localhost:8080](localhost:8080)
 
